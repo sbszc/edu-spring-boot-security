@@ -1,8 +1,6 @@
 package com.sbszc.eduspringbootsecurity.security;
 
 import com.sbszc.eduspringbootsecurity.entity.UserAuth;
-import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
