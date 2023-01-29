@@ -12,8 +12,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@Slf4j
-@ToString
 public class ApplicationUserDetails implements UserDetails {
 
     private final UserAuth userAuth;
