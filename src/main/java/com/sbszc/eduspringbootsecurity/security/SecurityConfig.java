@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final UserDetailsService userDetailsService;
@@ -40,8 +41,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()//required for post, solves: ("status": 403,"error": "Forbidden")
-//                .headers().frameOptions().disable().and()//required for post using form login, solves: (type=Method Not Allowed, status=405)
                 .httpBasic().and()
+//                .headers().frameOptions().disable().and()//required for post using form login, solves: (type=Method Not Allowed, status=405)
 //                .formLogin().and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/write").hasAnyAuthority("write")
